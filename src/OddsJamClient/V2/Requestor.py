@@ -6,6 +6,22 @@ import datetime;
 
 class v2Requestor:
 
+    # region Players
+    def GetPlayers(self, name: str = None, id: str = None, sport: str = None, league: str = None, team: str = None,
+                   is_active: bool = True, include_logos: bool = False,
+                   page: int = None) -> Response.V2.GetLeaguesResponse:
+        '''Call Players endpoint of OddsJam API.
+        Required Parameters: None
+        Returns: GetLeaguesResponse
+        Functions in response: GetLeagueNames()
+        '''
+        if all(v is None for v in [name, id, sport, league, team, is_active, include_logos, page]):
+            raise Base.InvalidGetOddsV2Error();
+        resp = self.SendRequest(Request.V2.GetPlayersRequest(name, id, sport, league, team, is_active, include_logos, page));
+        return Response.V2.GetPlayersResponse(resp);
+
+    # endregion Players
+
     #region Leagues
     def GetLeagues(self, sport: str = None, isLive: bool = None) -> Response.V2.GetLeaguesResponse:
         '''Call Games endpoint of OddsJam API.

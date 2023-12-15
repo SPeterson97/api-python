@@ -13,7 +13,7 @@ class OddsJamClient():
         self.BaseUrl = 'https://api-external.oddsjam.com/api/';
         self.V1Requestor = v1Requestor;
         self.V2Requestor = v2Requestor;
-        self.UseV1();
+        self.UseV2();
 
     def UseV1(self):
         self.Version = 1;

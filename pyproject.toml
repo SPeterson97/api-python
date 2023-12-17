@@ -4,6 +4,7 @@ dynamic = ["version"]
 authors = [
     { name="Rohan Challa", email="rchalla769@gmail.com" },
     { name="Brandon Cooper", email="cooper.brandon@outlook.com" },
+    { name="Sam Peterson", email="samuelpeterson2015@gmail.com" },
 ]
 description = "A lightweight OddsJam API wrapper"
 readme = "README.md"

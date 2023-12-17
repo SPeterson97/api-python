@@ -17,7 +17,7 @@ class GetTeamsRequest(RequestBase):
     include_records: str = 'false';
 
     def ApiPath(cls) -> str:
-        return 'v2/players/list';
+        return 'v2/teams';
 
     def __post_init__(cls):
         return super().__post_init__()

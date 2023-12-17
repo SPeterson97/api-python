@@ -7,3 +7,4 @@ from .FutureOdds import FutureOdds, FutureOdd
 from .Score import Score
 from .PeriodScore import PeriodScore
 from .Player import Player
+from .Team import Team

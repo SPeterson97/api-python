@@ -17,4 +17,6 @@ class Player(ModelBase):
     position: str = None;
     age: str = None;
     height: str = None;
-    weight: str = None;
+    weight: int = None;
+    is_active: bool = None;
+    logo: str = None;

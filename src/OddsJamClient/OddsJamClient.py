@@ -34,6 +34,8 @@ class OddsJamClient():
         self.GetMarkets = types.MethodType(v2Requestor.GetMarkets, self);
         self.GetOdds = types.MethodType(v2Requestor.GetOdds, self);
         self.GetScores = types.MethodType(v2Requestor.GetScores, self);
+        self.GetPlayer = types.MethodType(v2Requestor.GetPlayers, self);
+        self.GetTeams = types.MethodType(v2Requestor.GetTeams, self);
 
     def SendRequest(self, request: Base.RequestBase):
         return requests.get(self.BaseUrl + request.ApiPath() + '?key=' + self.APIKEY, request.__dict__).text;

@@ -6,20 +6,35 @@ import datetime;
 
 class v2Requestor:
 
+    # region Teams
+    def GetTeams(self, name: str = None, id: str = None, sport: str = None, league: str = None, division: str = None,
+                   conference: str = None, detailed: str = 'false',
+                   include_logos: str = 'false', include_records: str = 'false') -> Response.V2.GetLeaguesResponse:
+        '''Call Teams endpoint of OddsJam API.
+        Required Parameters: None
+        Returns: GetTeamsResponse
+        Functions in response: GetTeamNames()
+        '''
+        if all(v is None for v in [name, id, sport, league, division, conference, detailed, include_logos, include_records]):
+            raise Base.InvalidGetOddsV2Error();
+        resp = self.SendRequest(
+            Request.V2.GetTeamsRequest(name, id, sport, league, division, conference, detailed, include_logos, include_records));
+        return Response.V2.GetTeamsResponse(resp);
+
+    # endregion Teams
+
     # region Players
     def GetPlayers(self, name: str = None, id: str = None, sport: str = None, league: str = None, team: str = None,
-                   is_active: bool = True, include_logos: bool = False,
+                   is_active: str = 'true', include_logos: bool = False,
                    page: int = None) -> Response.V2.GetLeaguesResponse:
         '''Call Players endpoint of OddsJam API.
         Required Parameters: None
-        Returns: GetLeaguesResponse
-        Functions in response: GetLeagueNames()
+        Returns: GetPlayersResponse
         '''
         if all(v is None for v in [name, id, sport, league, team, is_active, include_logos, page]):
             raise Base.InvalidGetOddsV2Error();
         resp = self.SendRequest(Request.V2.GetPlayersRequest(name, id, sport, league, team, is_active, include_logos, page));
         return Response.V2.GetPlayersResponse(resp);
-
     # endregion Players
 
     #region Leagues

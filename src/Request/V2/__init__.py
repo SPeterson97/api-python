@@ -6,3 +6,4 @@ from .GetFuturesRequest import GetFuturesRequest;
 from .GetFutureOddsRequest import GetFutureOddsRequest;
 from .GetScoresRequest import GetScoresRequest;
 from .GetPlayersRequest import GetPlayersRequest;
+from .GetTeamsRequest import GetTeamsRequest;

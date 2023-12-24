@@ -1,5 +1,5 @@
 [project]
-name = "oddsjam-api"
+name = "oddsjam-api-speterson"
 dynamic = ["version"]
 authors = [
     { name="Rohan Challa", email="rchalla769@gmail.com" },

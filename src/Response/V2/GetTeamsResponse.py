@@ -9,10 +9,10 @@ class GetTeamsResponse(ResponseBase):
         super().__init__(response);
         resp = json.loads(response);
         obj = self.ParseResponse(json.dumps(resp['data']));
-        self.Teams = [t for t in obj]
+        self.Teams = [Team(**t) for t in obj]
 
     def ParseResponse(self, response: str):
         try:
-            return json.loads(response, object_hook=lambda d: Team(**d));
+            return json.loads(response);
         except Exception as ex:
             return ex;

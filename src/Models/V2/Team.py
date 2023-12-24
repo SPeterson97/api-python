@@ -16,4 +16,4 @@ class Team(ModelBase):
     team_nickname: str = None;
     division: str = None;
     conference: str = None;
-    # TODO: records
+    records: dict = None;
